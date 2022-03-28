@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMP1903M Assessment 1 Code", "CMP1903M Assessment 1 Code.csproj", "{9B312E2B-FC66-454B-BB24-ED77B6A73FAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B312E2B-FC66-454B-BB24-ED77B6A73FAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B312E2B-FC66-454B-BB24-ED77B6A73FAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B312E2B-FC66-454B-BB24-ED77B6A73FAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B312E2B-FC66-454B-BB24-ED77B6A73FAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3FA73F80-6E80-4DD2-9400-CA1BD32CB4BA}
+	EndGlobalSection
+EndGlobal
