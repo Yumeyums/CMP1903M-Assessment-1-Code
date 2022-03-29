@@ -1,0 +1,13 @@
+C:\Users\NITRO 5 TURBO\source\repos\CMP1903M Assessment 1 Code\bin\Debug\netcoreapp3.1\CMP1903M Assessment 1 Code.exe
+C:\Users\NITRO 5 TURBO\source\repos\CMP1903M Assessment 1 Code\bin\Debug\netcoreapp3.1\CMP1903M Assessment 1 Code.deps.json
+C:\Users\NITRO 5 TURBO\source\repos\CMP1903M Assessment 1 Code\bin\Debug\netcoreapp3.1\CMP1903M Assessment 1 Code.runtimeconfig.json
+C:\Users\NITRO 5 TURBO\source\repos\CMP1903M Assessment 1 Code\bin\Debug\netcoreapp3.1\CMP1903M Assessment 1 Code.runtimeconfig.dev.json
+C:\Users\NITRO 5 TURBO\source\repos\CMP1903M Assessment 1 Code\bin\Debug\netcoreapp3.1\CMP1903M Assessment 1 Code.dll
+C:\Users\NITRO 5 TURBO\source\repos\CMP1903M Assessment 1 Code\bin\Debug\netcoreapp3.1\CMP1903M Assessment 1 Code.pdb
+C:\Users\NITRO 5 TURBO\source\repos\CMP1903M Assessment 1 Code\obj\Debug\netcoreapp3.1\CMP1903M Assessment 1 Code.csprojAssemblyReference.cache
+C:\Users\NITRO 5 TURBO\source\repos\CMP1903M Assessment 1 Code\obj\Debug\netcoreapp3.1\CMP1903M Assessment 1 Code.AssemblyInfoInputs.cache
+C:\Users\NITRO 5 TURBO\source\repos\CMP1903M Assessment 1 Code\obj\Debug\netcoreapp3.1\CMP1903M Assessment 1 Code.AssemblyInfo.cs
+C:\Users\NITRO 5 TURBO\source\repos\CMP1903M Assessment 1 Code\obj\Debug\netcoreapp3.1\CMP1903M Assessment 1 Code.csproj.CoreCompileInputs.cache
+C:\Users\NITRO 5 TURBO\source\repos\CMP1903M Assessment 1 Code\obj\Debug\netcoreapp3.1\CMP1903M Assessment 1 Code.dll
+C:\Users\NITRO 5 TURBO\source\repos\CMP1903M Assessment 1 Code\obj\Debug\netcoreapp3.1\CMP1903M Assessment 1 Code.pdb
+C:\Users\NITRO 5 TURBO\source\repos\CMP1903M Assessment 1 Code\obj\Debug\netcoreapp3.1\CMP1903M Assessment 1 Code.genruntimeconfig.cache
