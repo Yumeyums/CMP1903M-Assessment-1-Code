@@ -65,7 +65,7 @@ namespace CMP1903M_Assessment_1_Code
                 {
                     if (vowels.Contains(letter))
                     {
-                        vowelCount++; //Raise the number of vowels by 1 every time a consonant is found in a letter.
+                        vowelCount++; //Raise the number of vowels by 1 every time a vowel is found in a letter.
                     }
                 }
             }
