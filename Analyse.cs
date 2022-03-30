@@ -32,15 +32,14 @@ namespace CMP1903M_Assessment_1_Code
 
             string[] sentences = DeconstructSentence(input);
 
-            values[0] = sentences.Length; //Gets the number of sentences.
-
-            values[1] = GetVowelCount(sentences);  //Gets the number of vowels of the sentences.
-
-            values[2] = GetConsonantCount(sentences); //Gets the number of consonants of the sentences.
-
-            values[3] = GetUpperCaseCount(sentences); //Gets the number of Upper Case letters.
-
-            values[4] = GetLowerCaseCount(sentences); //Gets the number of Lower Case letters.
+            values[0] = sentences.Length - 1; //Gets the number of sentences.
+            foreach (string sentence in sentences)
+            {
+                values[1] = GetVowelCount(sentence, values[1]); //Gets the number of vowels of the sentences.
+                values[2] = GetConsonantCount(sentence, values[2]); //Gets the number of consonants of the sentences.
+                values[3] = GetUpperCaseCount(sentence, values[3]); //Gets the number of Upper Case letters.
+                values[4] = GetLowerCaseCount(sentence, values[4]); //Gets the number of Lower Case letters.
+            }
 
 
             return values;
@@ -55,60 +54,48 @@ namespace CMP1903M_Assessment_1_Code
 
         char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
 
-        private int GetVowelCount(string[] sentences)
+        private int GetVowelCount(string sentence, int curVowelCount)
         {
-            int vowelCount = 0;
-            foreach (string sentence in sentences)
+            string words = sentence.ToLower();
+            foreach (char letter in words)
             {
-                string words = sentence.ToLower();
-                foreach (char letter in words)
+                if (vowels.Contains(letter))
                 {
-                    if (vowels.Contains(letter))
-                    {
-                        vowelCount++; //Raise the number of vowels by 1 every time a vowel is found in a letter.
-                    }
+                    curVowelCount++; //Raise the number of vowels by 1 every time a vowel is found in a letter.
                 }
             }
-            return vowelCount;
+            return curVowelCount;
         }
 
-        private int GetConsonantCount(string[] sentences)
+        private int GetConsonantCount(string sentence, int curConsonantCount)
         {
-            int consonantCount = 0;
-            foreach (string sentence in sentences) 
+            string words = sentence.ToLower();
+            foreach (char letter in words)
             {
-                foreach (char letter in sentence)
-                {
 
-                    if (!vowels.Contains(letter) && char.IsLetter(letter))
-                    {
-                        consonantCount++; //Raise the number of consonants by 1 every time a consonant is found in a letter.
-                    }
+                if (!vowels.Contains(letter) && char.IsLetter(letter))
+                {
+                    curConsonantCount++; //Raise the number of consonants by 1 every time a consonant is found in a letter.
                 }
             }
-            return consonantCount;
+            
+            return curConsonantCount;
         }
 
-        private int GetUpperCaseCount(string[] sentences)
+        private int GetUpperCaseCount(string sentence, int curUpperCaseCount)
         {
+            curUpperCaseCount = curUpperCaseCount + sentence.Count(c => c >= 'A' && c <= 'Z'); //Adds the number of upper cases from the sentences provided.
 
-            int upperCaseCount = 0;
-            foreach (string sentence in sentences)
-            {
-                upperCaseCount = upperCaseCount + sentence.Count(c => c >= 'A' && c <= 'Z'); //Adds the number of upper cases from the previous sentence.
-            }
+            
 
-            return upperCaseCount;
+            return curUpperCaseCount;
         }
-        private int GetLowerCaseCount(string[] sentences)
+        private int GetLowerCaseCount(string sentence, int curLowerCaseCount)
         {
-            int lowerCaseCount = 0;
-            foreach (string sentence in sentences)
-            {
-                lowerCaseCount = lowerCaseCount + sentence.Count(c => c >= 'a' && c <= 'z');
-            }
 
-            return lowerCaseCount;
+            curLowerCaseCount = curLowerCaseCount + sentence.Count(c => c >= 'a' && c <= 'z'); //Adds the number of lower cases from the sentences provided.
+            
+            return curLowerCaseCount;
         }
 
         public Dictionary<char, int> LetterFrequency(string sentences) //Stores the letters used in the sentences and creates a dictionary of letters and how frequent they appear.
