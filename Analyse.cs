@@ -25,7 +25,7 @@ namespace CMP1903M_Assessment_1_Code
             //5. Number of lower case letters
             List<int> values = new List<int>();
             //Initialise all the values in the list to '0'
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i <= 5; i++)
             {
                 values.Add(0);
             }
@@ -39,12 +39,14 @@ namespace CMP1903M_Assessment_1_Code
                 values[2] = GetConsonantCount(sentence, values[2]); //Gets the number of consonants of the sentences.
                 values[3] = GetUpperCaseCount(sentence, values[3]); //Gets the number of Upper Case letters.
                 values[4] = GetLowerCaseCount(sentence, values[4]); //Gets the number of Lower Case letters.
+                values[5] = GetLongWords(sentence, values[5]); //Finds long words in the sentences provided.
             }
 
 
             return values;
         }
 
+        //Following methods are encapsulated, they cannot be accessed outside this class.
         private string[] DeconstructSentence(string input) //Takes the user input and splits it into sentences.
         {
             char[] sentenceEnder = { '!', '?', '.' };
@@ -53,8 +55,7 @@ namespace CMP1903M_Assessment_1_Code
         }
 
         char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
-
-        private int GetVowelCount(string sentence, int curVowelCount)
+        private int GetVowelCount(string sentence, int curVowelCount) 
         {
             string words = sentence.ToLower();
             foreach (char letter in words)
@@ -98,6 +99,18 @@ namespace CMP1903M_Assessment_1_Code
             return curLowerCaseCount;
         }
 
+        private int GetLongWords(string sentence, int curLongWordsCount)
+        {
+            string[] words = sentence.Split(' ');
+            foreach (string word in words) //Gets the word from the string array of words
+            {
+                if (word.Length > 7)
+                {
+                    curLongWordsCount++; //Adds to long word count if length of word is greater than 7.
+                }
+            }
+            return curLongWordsCount;
+        }
         public Dictionary<char, int> LetterFrequency(string sentences) //Stores the letters used in the sentences and creates a dictionary of letters and how frequent they appear.
         {
             sentences = sentences.ToLower();
