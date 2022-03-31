@@ -14,7 +14,7 @@ namespace CMP1903M_Assessment_1_Code
         //Arguments: string
         //Returns: list of integers
         //Calculates and returns an analysis of the text
-
+        public List<string> longWords = new List<string>(); //List of long words to be used outside of class in report.
         public List<int> analyseText(string input)
         {
             //List of integers to hold the first five measurements:
@@ -32,6 +32,8 @@ namespace CMP1903M_Assessment_1_Code
 
             string[] sentences = DeconstructSentence(input);
 
+  
+
             values[0] = sentences.Length - 1; //Gets the number of sentences.
             foreach (string sentence in sentences)
             {
@@ -39,10 +41,9 @@ namespace CMP1903M_Assessment_1_Code
                 values[2] = GetConsonantCount(sentence, values[2]); //Gets the number of consonants of the sentences.
                 values[3] = GetUpperCaseCount(sentence, values[3]); //Gets the number of Upper Case letters.
                 values[4] = GetLowerCaseCount(sentence, values[4]); //Gets the number of Lower Case letters.
-                values[5] = GetLongWords(sentence, values[5]); //Finds long words in the sentences provided.
+
+                longWords = GetLongWords(sentence, longWords);
             }
-
-
             return values;
         }
 
@@ -99,17 +100,18 @@ namespace CMP1903M_Assessment_1_Code
             return curLowerCaseCount;
         }
 
-        private int GetLongWords(string sentence, int curLongWordsCount)
+        public List<string> GetLongWords(string sentence, List<string> longWords)
         {
             string[] words = sentence.Split(' ');
             foreach (string word in words) //Gets the word from the string array of words
             {
                 if (word.Length > 7)
                 {
-                    curLongWordsCount++; //Adds to long word count if length of word is greater than 7.
+                    longWords.Add(word);
                 }
+                
             }
-            return curLongWordsCount;
+            return longWords;
         }
         public Dictionary<char, int> LetterFrequency(string sentences) //Stores the letters used in the sentences and creates a dictionary of letters and how frequent they appear.
         {

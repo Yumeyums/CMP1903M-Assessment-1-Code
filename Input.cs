@@ -36,6 +36,7 @@ namespace CMP1903M_Assessment_1_Code
         public string fileTextInput(string fileName) 
         {
             text = File.ReadAllText(fileName);
+            
             return text;
         }
     }

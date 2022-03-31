@@ -19,15 +19,19 @@ namespace CMP1903M_Assessment_1_Code
             Input input = new Input();
             string userInput = GetUserInput(input);
 
+
+
             //Create an 'Analyse' object
             Analyse analysis = new Analyse();
 
             //Pass the text input to the 'analyseText' method
             Report analysisReport = new Report();
             analysisReport.Output(analysis.analyseText(userInput), analysis.LetterFrequency(userInput)); //Passes to the Report class, outputs the results of analysis, including Letter Frequency.
-           
+            analysisReport.SaveLongWords(analysis.longWords, useManualInput);
             //TO ADD: Get the frequency of individual letters?
         }
+
+        public static bool useManualInput { get; set; }
 
         private static string GetUserInput(Input input) //Gets user input, checks whether they want to use a manual sentence or read from a text file.
         {
@@ -56,10 +60,12 @@ namespace CMP1903M_Assessment_1_Code
                 //Breaks out of the loop by returning a userInput value.
                 if (userChoice == 1)
                 {
+                    useManualInput = true;
                     return input.manualTextInput();
                 }
                 else
                 {
+                    useManualInput = false;
                     //Error handling if File path does not exist
                     try
                     {
