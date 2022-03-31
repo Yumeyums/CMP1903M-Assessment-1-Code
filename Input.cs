@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 namespace CMP1903M_Assessment_1_Code
 {
@@ -16,7 +17,15 @@ namespace CMP1903M_Assessment_1_Code
 
         public string manualTextInput()
         {
-            text = Console.ReadLine();
+            while (true)
+            {
+                text = Console.ReadLine();
+                if (text == null || text.Length <= 0) //If the user doesn't input anything, the text input loops.
+                {
+                    Console.WriteLine("Please enter a valid sentence.");
+                }
+                break;
+            }
             return text;
         }
 
@@ -24,9 +33,10 @@ namespace CMP1903M_Assessment_1_Code
         //Arguments: string (the file path)
         //Returns: string
         //Gets text input from a .txt file
-        public string fileTextInput(string fileName)
+        public string fileTextInput(string fileName) 
         {
-
+            text = File.ReadAllText(fileName);
+            
             return text;
         }
     }
